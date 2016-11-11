@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :authenticate
 
   #GET /api/allTasks
   def index
@@ -20,8 +21,8 @@ class TasksController < ApplicationController
 
   #GET /api/oneTask
   def show
-  oneTask = Task.find(params[:id])
-  render json: oneTask
+    oneTask = Task.find(params[:id])
+    render json: oneTask
   end
 
   #POST /api/create oneTask
@@ -50,12 +51,14 @@ class TasksController < ApplicationController
   #DELETE /api/delete oneTask
   def destroy
     oneTask = Task.find(params[:id])
-    oneTask.destroy
-
-    if oneTask.destroy
-      render json: {status: 204}
+    if oneTask.assigned_by === logged_user['id']
+      if oneTask.destroy
+        render json: {status: 204}
+      else
+        render json: oneTask.errors, status: :unprocessable_entity
+      end
     else
-      render json: oneTask.errors, status: :unprocessable_entity
+      render json: {status: 401, message: 'Only who assign is authorize to delete' }
     end
   end
 

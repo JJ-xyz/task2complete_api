@@ -13,14 +13,18 @@ class ApplicationController < ActionController::API
   def current_user
     return if !bearer_token
     decoded_jwt = decode_token(request.env["HTTP_AUTHORIZATION"])
-
-    User.find(decoded_jwt.user.id)
+    puts User.find(decoded_jwt.user.id)
   end
 
   def decode_token(token)
     token = JWT.decode(token, nil, false) # this will error if the token is invalid or expired
   rescue
     render json: {status: 401, message: 'invalid or expired token'}
+  end
+
+  def logged_user
+    return if !bearer_token
+    decode_token(bearer_token)[0]["user"]
   end
 
 end
