@@ -1,24 +1,29 @@
-# README
+# WDIr Final Project (part 3/3)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Tasks To Complete API - (task2complete_api)
 
-Things you may want to cover:
+Task management application
 
-* Ruby version
 
-* System dependencies
+## Summary
 
-* Configuration
+The application monitor a list of tasks or activities assigned to other users
+the user to whom the task is assigned is responsible to complete the task and
+marked as complete. The user who assigns tasks can monitor of the completion.
 
-* Database creation
+## Framework
 
-* Database initialization
+* Ruby on rails
+* Two models (Users & Tasks)
+* Two relationship one-to-many from the same 
 
-* How to run the test suite
+## Dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+This is the back-end portion of the application. It complements the
+task2complete_ui front-end.  
 
-* Deployment instructions
+## second pass
+
+* include emails notification upon user registration
 
 * ...
