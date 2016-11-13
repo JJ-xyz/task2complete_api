@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'localhost:4000', 'http://task2complete.ui.herokuapp.com'
+    origins 'localhost:4000', 'http://task2complete.herokuapp.com'
 
     resource '*',
       headers: :any,
