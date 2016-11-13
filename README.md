@@ -15,7 +15,7 @@ marked as complete. The user who assigns tasks can monitor of the completion.
 
 * Ruby on rails
 * Two models (Users & Tasks)
-* Two relationship one-to-many from the same 
+* Two relationship one-to-many from the same
 
 ## Dependencies
 
@@ -25,5 +25,6 @@ task2complete_ui front-end.
 ## second pass
 
 * include emails notification upon user registration
+* include task completion statistics with graphs
 
 * ...

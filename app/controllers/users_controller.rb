@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
    #GET /api/allUsers
    def index
-     allUsers = User.all
+     allUsers = User.select("id, username, email, e_confirmed")
      render json: allUsers
    end
 
