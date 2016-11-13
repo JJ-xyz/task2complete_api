@@ -73,7 +73,8 @@ class TasksController < ApplicationController
         :date_due,
         :date_completed,
         :assigned_to,
-        :assigned_by
+        :assigned_by,
+        :is_complete
         )
     end
 
