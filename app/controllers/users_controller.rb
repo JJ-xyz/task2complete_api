@@ -43,9 +43,6 @@ class UsersController < ApplicationController
        else
          render json: user.errors, status: :unprocessable_entity
        end
-     #else                              # uncomment to restict user update
-       #render json: {status: 401, message: 'Profile can only be update by owner' }
-     #end                               # uncomment to restict user update ^^^ also
    end
 
   private
